@@ -14,20 +14,20 @@ import "materialize-css/dist/css/materialize.min.css";
 function App() {
   return (
     <>
-      <Header />
-      <main className="content">
-        <div className="container">
-          <Router>
+      <Router>
+        <Header />
+        <main className="content">
+          <div className="container">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/contacts" element={<Contact />} />
               <Route path="/about" element={<About />} />
               <Route element={<NotFound />} />
             </Routes>
-          </Router>
-        </div>
-      </main>
-      <Footer />
+          </div>
+        </main>
+        <Footer />
+      </Router>
     </>
   );
 }
