@@ -1,3 +1,15 @@
+import { useState, useEffect } from "react";
+import { getAllCategories } from "../api";
+import { CategoriesList } from "../components/CategoriesList";
+
 export function Home() {
-  return <h1 className="home__title">Hello Home Page</h1>;
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    getAllCategories().then((data) => {
+      setCategories(data.categories);
+    });
+  }, []);
+
+  return <CategoriesList categories={categories} />;
 }
