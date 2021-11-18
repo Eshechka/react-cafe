@@ -11,11 +11,7 @@ export function CategoriesItem({ category }) {
       <span className="title">{category.strCategory}</span>
       <p>{category.strCategoryDescription.slice(0, 30) + "..."}</p>
       <Link
-        to={{
-          pathname: `/category/${category.strCategory}`,
-          category: category,
-        }}
-        // to={`/category/${category.strCategory}`}
+        to={`/category/${category.strCategory}`}
         className="secondary-content"
       >
         <i className="material-icons">send</i>

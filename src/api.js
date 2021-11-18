@@ -25,10 +25,16 @@ async function filterByCategory(catName) {
   return await responce.json();
 }
 
+async function getMealDetailsById(mealId) {
+  const responce = await fetch(API_URL + `lookup.php?i=${mealId}`);
+  return await responce.json();
+}
+
 export {
   getAllByFirstLetter,
   fullMealDetailsById,
   getRandomMeal,
   getAllCategories,
   filterByCategory,
+  getMealDetailsById,
 };

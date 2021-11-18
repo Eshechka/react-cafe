@@ -1,18 +1,42 @@
-import { useParams } from "react-router-dom";
-import { filterByCategory } from "../api";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { filterByCategory } from "../api";
 
 import { Preloader } from "./Preloader";
 import { MealsList } from "./MealsList";
 
 export function Category() {
-  let { name } = useParams();
-
+  const { name } = useParams();
   const [meals, setMeals] = useState([]);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const hasPreviousState = location.key !== "default";
+
+  const handleClick = () => {
+    if (hasPreviousState) {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  };
 
   useEffect(() => {
     filterByCategory(name).then((data) => data.meals && setMeals(data.meals));
   }, [name]);
 
-  return meals.length ? <MealsList meals={meals} /> : <Preloader />;
+  return (
+    <>
+      <a
+        className="waves-effect waves-light deep-orange btn"
+        onClick={handleClick}
+      >
+        {hasPreviousState ? "Go Back" : "Go Home"}
+      </a>
+      {meals.length ? (
+        <MealsList meals={meals} nameCategoryMeals={name} />
+      ) : (
+        <Preloader />
+      )}
+    </>
+  );
 }

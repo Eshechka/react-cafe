@@ -10,6 +10,7 @@ import { Contact } from "./pages/Contact";
 // import { About } from "./pages/About";
 import { NotFound } from "./pages/NotFound";
 import { Category } from "./components/Category";
+import { Meal } from "./components/Meal";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route path="/contacts" element={<Contact />} />
               <Route path="/category/:name" element={<Category />} />
+              <Route path="/category/:name/meal/:id" element={<Meal />} />
               <Route element={<NotFound />} />
             </Routes>
           </div>
