@@ -14,8 +14,14 @@ async function getRandomMeal() {
   const responce = await fetch(API_URL + `random.php`);
   return responce.json();
 }
+
 async function getAllCategories() {
   const responce = await fetch(API_URL + "categories.php");
+  return await responce.json();
+}
+
+async function filterByCategory(catName) {
+  const responce = await fetch(API_URL + `filter.php?c=${catName}`);
   return await responce.json();
 }
 
@@ -24,4 +30,5 @@ export {
   fullMealDetailsById,
   getRandomMeal,
   getAllCategories,
+  filterByCategory,
 };

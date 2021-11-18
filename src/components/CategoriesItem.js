@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function CategoriesItem({ category }) {
   return (
     <li className="categories__item collection-item avatar">
@@ -7,10 +9,17 @@ export function CategoriesItem({ category }) {
         className="circle"
       />
       <span className="title">{category.strCategory}</span>
-      <p></p>
-      <a href="#!" className="secondary-content">
+      <p>{category.strCategoryDescription.slice(0, 30) + "..."}</p>
+      <Link
+        to={{
+          pathname: `/category/${category.strCategory}`,
+          category: category,
+        }}
+        // to={`/category/${category.strCategory}`}
+        className="secondary-content"
+      >
         <i className="material-icons">send</i>
-      </a>
+      </Link>
     </li>
   );
 }

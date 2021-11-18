@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "materialize-css/dist/css/materialize.min.css";
 
 import "./app.scss";
 import { Footer } from "./components/Footer";
@@ -6,10 +7,9 @@ import { Header } from "./components/Header";
 
 import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
-import { About } from "./pages/About";
+// import { About } from "./pages/About";
 import { NotFound } from "./pages/NotFound";
-
-import "materialize-css/dist/css/materialize.min.css";
+import { Category } from "./components/Category";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/contacts" element={<Contact />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/category/:name" element={<Category />} />
               <Route element={<NotFound />} />
             </Routes>
           </div>
