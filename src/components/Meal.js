@@ -57,12 +57,12 @@ export function Meal() {
           </div>
           <p className="meal__reciept">{mealDetails.strInstructions}</p>
         </div>
-        <a
+        <button
           className="waves-effect waves-light deep-orange btn meal__back-btn"
           onClick={handleClick}
         >
           {hasPreviousState ? "Go Back to Meals List" : "Go Home"}
-        </a>
+        </button>
       </div>
     </div>
   );

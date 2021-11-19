@@ -1,17 +1,7 @@
 import { API_URL } from "./config";
 
-async function getAllByFirstLetter(firstLetter) {
-  const responce = await fetch(API_URL + `search.php?f=${firstLetter}`);
-  return responce.json();
-}
-
-async function fullMealDetailsById(id) {
-  const responce = await fetch(API_URL + `lookup.php?i=${id}`);
-  return responce.json();
-}
-
-async function getRandomMeal() {
-  const responce = await fetch(API_URL + `random.php`);
+async function getMealByName(mealName) {
+  const responce = await fetch(API_URL + `search.php?s=${mealName}`);
   return responce.json();
 }
 
@@ -31,9 +21,7 @@ async function getMealDetailsById(mealId) {
 }
 
 export {
-  getAllByFirstLetter,
-  fullMealDetailsById,
-  getRandomMeal,
+  getMealByName,
   getAllCategories,
   filterByCategory,
   getMealDetailsById,

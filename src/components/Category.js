@@ -26,12 +26,12 @@ export function Category() {
 
   return (
     <>
-      <a
+      <button
         className="waves-effect waves-light deep-orange btn"
         onClick={handleClick}
       >
         {hasPreviousState ? "Go Back to Categories List" : "Go Home"}
-      </a>
+      </button>
       {meals.length ? (
         <MealsList meals={meals} nameCategoryMeals={name} />
       ) : (

@@ -7,7 +7,6 @@ import { Header } from "./components/Header";
 
 import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
-// import { About } from "./pages/About";
 import { NotFound } from "./pages/NotFound";
 import { Category } from "./components/Category";
 import { Meal } from "./components/Meal";
@@ -15,7 +14,7 @@ import { Meal } from "./components/Meal";
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/react-cafe">
         <Header />
         <main className="content">
           <div className="container">

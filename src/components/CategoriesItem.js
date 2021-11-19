@@ -12,7 +12,7 @@ export function CategoriesItem({ category }) {
       <p>{category.strCategoryDescription.slice(0, 30) + "..."}</p>
       <Link
         to={`/category/${category.strCategory}`}
-        className="secondary-content"
+        className="secondary-content deep-orange-text"
       >
         <i className="material-icons">send</i>
       </Link>

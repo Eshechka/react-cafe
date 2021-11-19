@@ -65,3 +65,23 @@ code {
     min-width: 320px;
   }
 }
+
+.search {
+  &__form {
+    display: flex;
+    align-items: center;
+  }
+}
+
+input[type="text"]:not(.browser-default):focus:not([readonly])
+  + label.search__label.active {
+  color: #ee6e73;
+}
+input[type="text"]:not(.browser-default):focus:not([readonly]).search__input {
+  border-bottom: 1px solid #ff5722;
+  box-shadow: 0 1px 0 0 #ff5722;
+}
+input.valid[type="text"]:not(.browser-default).search__input {
+  border-bottom: 1px solid #ee6e73;
+  box-shadow: 0 1px 0 0 #ee6e73;
+}
