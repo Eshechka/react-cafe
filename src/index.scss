@@ -60,7 +60,6 @@ code {
   }
   @include tablets {
     max-width: none;
-    padding: 0 10px;
   }
   @include phones {
     min-width: 320px;

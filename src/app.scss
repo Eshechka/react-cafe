@@ -7,6 +7,9 @@ main {
 }
 
 .meal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 20px;
   &__list {
     display: grid;
     gap: 30px;
@@ -14,5 +17,29 @@ main {
   }
   &__item {
     display: flex;
+  }
+  &__img {
+    max-height: 600px;
+    overflow: hidden;
+    & img {
+      object-fit: contain;
+    }
+  }
+  &__back-btn {
+    margin: 10px 20px;
+  }
+  &__ingredients-table {
+    width: 70%;
+    margin: 20px auto 30px;
+
+    td {
+      padding: 4px 5px;
+    }
+    thead td {
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px 5px;
+    }
   }
 }

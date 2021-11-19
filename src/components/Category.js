@@ -30,7 +30,7 @@ export function Category() {
         className="waves-effect waves-light deep-orange btn"
         onClick={handleClick}
       >
-        {hasPreviousState ? "Go Back" : "Go Home"}
+        {hasPreviousState ? "Go Back to Categories List" : "Go Home"}
       </a>
       {meals.length ? (
         <MealsList meals={meals} nameCategoryMeals={name} />
